@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<h1>Current Location</h1>
+			<input type="text"  id="txtJob">
+	</div>
+	<button onclick="getAddress()" type="button">Find me!</button>
+	<div id="street-view"></div>
+	<h1 id = 'have'>Have you ever wondered?</h1>
+	<script src="VanillaJS.js"></script>
+    <script>
+      var panorama;
+      function initialize() {
+        panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('street-view'),
+            {
+              position: {lat: 37.869260, lng: -122.254811},
+              pov: {heading: 165, pitch: 0},
+              zoom: 1
+            });
+      }
+    </script>
+
+    <script async defer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpdJ6aoCJJEFlj__0e9UkOKW-KHoJVBZk
+			&callback=initialize">
+    </script>
+	<br><br>
+	<div id="pano"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</body>
+</html>
+
